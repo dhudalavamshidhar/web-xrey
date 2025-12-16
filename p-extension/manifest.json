@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "SafeBrowse AI",
+  "description": "Dual-mode browsing companion that surfaces technical security insights and friendly safety tips.",
+  "version": "0.1.0",
+  "action": {
+    "default_title": "SafeBrowse AI",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://dns.google/*"
+  ]
+}
+

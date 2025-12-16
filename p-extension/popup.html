@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeBrowse AI</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title-block">
+        <img src="icons/icon128.png" alt="SafeBrowse AI icon" />
+        <div>
+          <h1>SafeBrowse AI</h1>
+          <p>Instant safety intelligence for any site</p>
+        </div>
+      </div>
+      <div class="mode-toggle" role="group" aria-label="Mode toggle">
+        <button id="techModeBtn" class="active">Tech Mode</button>
+        <button id="friendlyModeBtn">Non-Tech Mode</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="techMode" class="mode-panel active" aria-live="polite">
+        <div class="info-grid">
+          <article>
+            <h2>Current Site</h2>
+            <p id="siteUrl">Loading...</p>
+            <p class="sub" id="protocol">Protocol: —</p>
+          </article>
+          <article>
+            <h2>Public IP (demo)</h2>
+            <p id="publicIp">Resolving...</p>
+            <p class="sub muted">DNS based demo lookup only</p>
+          </article>
+          <article>
+            <h2>Server Header</h2>
+            <p id="serverHeader">Analyzing...</p>
+          </article>
+          <article>
+            <h2>Inferred Ports</h2>
+            <ul id="portList"></ul>
+          </article>
+          <article>
+            <h2>Tech Stack Signals</h2>
+            <ul id="techStack"></ul>
+          </article>
+          <article>
+            <h2>Security Status</h2>
+            <p id="securityStatus" class="status-chip">Checking...</p>
+            <p class="sub" id="trustLevel">Trust level: —</p>
+          </article>
+        </div>
+        <p class="disclaimer">
+          ⚠️ No live port scanning is performed. All port insights are inferred
+          from public metadata and common defaults.
+        </p>
+      </section>
+
+      <section id="friendlyMode" class="mode-panel" aria-live="polite">
+        <article>
+          <h2>Safe Shopping Snapshot</h2>
+          <p id="friendlyIntro">
+            Checking for curated offers and safety tips...
+          </p>
+        </article>
+        <article>
+          <h2>Today's Smart Picks</h2>
+          <ul id="offerList" class="offer-list"></ul>
+        </article>
+        <article>
+          <h2>Safety Tip</h2>
+          <p id="safetyTip">Stay alert for payment redirects and pop-ups.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <button id="refreshBtn" title="Refresh data">
+        Refresh details
+      </button>
+      <span>Built for demos & learning only.</span>
+    </footer>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
+
